@@ -2,7 +2,7 @@
 from tkinter import *
 
 cal = Tk()
-cal.title("Calculator by Sibi")
+cal.title("Simple Calculator")
 cal.geometry('360x400')
 
 def click(number):
