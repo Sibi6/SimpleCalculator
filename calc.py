@@ -3,7 +3,7 @@ from tkinter import *
 
 cal = Tk()
 cal.title("Calculator by Sibi")
-cal.geometry('370x370')
+cal.geometry('360x400')
 
 def click(number):
     global operator
@@ -20,6 +20,10 @@ def sum():
     operator = str(eval(operator))
     variable.set(operator)
 operator=""
+
+variable = StringVar()
+display = Entry(cal,font=('arial',20,'bold'),bd=25,textvariable=variable,justify='right')
+display.grid(columnspan=5)
 
 button1 = Button(cal,text='1',font=('arial',20,'bold'),bd=5,padx=10,command = lambda : click(1))
 button1.grid(row=3,column=0)
@@ -55,9 +59,7 @@ buttondiv.grid(row=4,column=4)
 buttonequal = Button(cal,text='=',font=('arial',20,'bold'),bd=5,padx=140,command = sum)
 buttonequal.grid(row=5,columnspan=5)
 
-variable = StringVar()
-display = Entry(cal,font=('arial',20,'bold'),bd=25,textvariable=variable,justify='right')
-display.grid(columnspan=5)
+
 
 button7 = Button(cal,text='7',font=('arial',20,'bold'),bd=5,padx=10,command = lambda : click('7'))
 button7.grid(row=1,column=0)
